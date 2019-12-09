@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="resources/favicon.ico" rel="icon" type="image/x-icon" />
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.2.1/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+    <link href="hover.css" rel="stylesheet">
+    <!-- W3schools css -->
+    <!-- <link rel="stylesheet" href="w3.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main--grid"></div>
+    <nav id="box" class="head__nav ">
+        <div class="inner_head___nav">
+            <img class="nav--icongif" src="./resources/book.gif" alt="coin">
+            <!-- <img class="nav--icon" src="./resources/book.png" alt="coin"> -->
+            <h4 class="gradient-text">Welcome</h4>
+            <!-- Github icon -->
+            <a id="github_icon" target="_blank" class="hvr-pop" href="https://github.com/trottdeaje"><i
+                    class="nes-icon github is-medium"></i></a>
+            <!-- linkedin icon-->
+            <a id="linkedin_icon" target="_blank" class="hvr-pop" href="https://www.linkedin.com/in/deajetrott/"><i
+                    class="nes-icon linkedin is-medium"></i></a>
+        </div>
+    </nav>
+
+    <div class="head">
+        <!-- class = "animated-box in" -->
+        <img id="spark" src="resources/spark.gif" alt="sparkle">
+        <img id="spark2" src="resources/spark.gif" alt="sparkle">
+
+        <!-- <img id="twinkle" src="resources/wow.gif" alt="twinkle">
+        <img id="twinkle2" src="resources/wowrot.gif" alt="twinkle"> -->
+        <h1 class="shine text-pop-up-bottom head__title">&lt;Library Help Desk&gt;</h1>
+
+        <!-- Search form -->
+        <form id="form__search" class="form-inline md-form form-sm mt-0">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input id="user_text" class="form-control form-control-sm ml-3 w-200" type="text" placeholder="Search"
+                aria-label="Search"><span><button class="nes-btn animated-box in" id="btn_search"
+                    type="submit">search</button></span>
+        </form>
+        <button type="button" id="nes-btn--add-author" class="nes-btn is-primary"
+            onclick="document.getElementById('dialog-dark').showModal();">
+            Add a Author
+        </button>
+        <dialog class="nes--resize nes-dialog is-dark" id="dialog-dark">
+            <form class="nes--modal" method="POST">
+                <h5 class="nes-grid-title">Fill out the following :)</h5>
+                <div class="heart-icon hvr-pulse-grow"><i class="nes-icon is-medium heart"></i></div>
+                <div style="background-color:#212529; padding: 1rem;" class="grid-first nes-field is-inline">
+                    <img class="asterick-icon" style="image-rendering: pixelated;" src="./resources/asterick.png"
+                        alt="required">
+                    <label id="first-name" for="dark_field" style="color:#fff;">First Name</label>
+                    <input type="text" id="dark_field" name="first-name-input" class="nes-input is-dark"
+                        placeholder="Type first name">
+                </div>
+
+                <div style="background-color:#212529; padding: 1rem;" class="grid-second nes-field is-inline">
+                    <img class="asterick-icon" style="image-rendering: pixelated;" src="./resources/asterick.png"
+                        alt="required">
+                    <label id="last-name" for="dark_field" style="color:#fff;">Last Name</label>
+                    <input type="text" id="dark_field" name="last-name-input" class="nes-input is-dark"
+                        placeholder="Type last name">
+                </div>
+
+                <label id="textarea" for="textarea_field">Bio</label>
+                <textarea id="textarea_field" name="textarea-input" class="grid-third nes-textarea"
+                    placeholder="Tell us about this author."></textarea>
+
+                <div class="grid-fourth nes-field">
+                    <label class="avatar-url" for="name_field">Avatar URL</label>
+                    <input type="text" id="name_field" name="avatar-url-input" class="nes-input" placeholder="Type URL">
+                </div>
+
+                <menu class="nes-grid-btns dialog-menu">
+                    <button class="nes-btn">Cancel</button>
+                    <button id="btn_submit_author" type="button" class="nes-btn is-primary"
+                        value="submit">Confirm</button>
+                </menu>
+            </form>
+        </dialog>
+    </div>
+
+    <section id="cards__contain">
+    </section>
+    <!-- <section id="section-target" class="section--page nes-container with-title is-centered is-rounded is-dark"
+        style="margin: 117px 0 0 0;">
+        <div id="books__grid">
+            <h2 class="books__grid--title">Books by Jordan Peterson</h2>
+
+            <div class="poster__grid__item--col1row2 nes-container with-title is-rounded is-dark">
+                <p class="title">Poster</p>
+                <img src="https://covers.openlibrary.org/b/id/8834227-L.jpg" alt="poster">
+            </div>
+
+            <div class="info__grid__item--col2row2 nes-container with-title is-rounded is-dark">
+                <p class="title">Info</p>
+                <div class="books__grid--info__grid">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, id.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, id.</p>
+                </div>
+            </div>
+
+            <div class="links__grid__item--col3row2 nes-container with-title is-rounded is-dark">
+                <p class="title">Links</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, id.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, id.</p>
+            </div>
+
+
+        </div>
+    </section> -->
+
+    <div id="page-template"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
