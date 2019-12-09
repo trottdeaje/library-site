@@ -1,4 +1,4 @@
-let apiUrl = "http://library-bm.herokuapp.com"
+let apiUrl = "https://library-bm.herokuapp.com"
 // http://library-bm.herokuapp.com
 // let authorId = authors.id
 // On submit target the form search and save the user input inside variable value
